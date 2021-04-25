@@ -6,11 +6,19 @@ import Message from "./Message";
 function App() {
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([
-        {username: "Rokas", text:"hey guys"},
-        {username: "Quaze", text:"hey Rokas, what about you?!"},
-        {username: "Rokas", text:"Let s just go to the city"}
+        {username: "Rokas", message:"hey guys"},
+        {username: "Quaze", message:"hey Rokas, what about you?!"},
+        {username: "Rokas", message:"Let s just go to the city"}
     ]);
     const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        // run once when the app component loads
+        db.collection('messages').onSnapshot(snapshot => {
+            setMessages(snapshot.docs.map(doc => doc.data()))
+        })
+
+    }, [])
 
     useEffect(() => {
         // run the code here

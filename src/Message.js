@@ -14,7 +14,7 @@ const Message = ({message, username}) => {
                         variant="h5"
                         component="h2"
                     >
-                        {message.username} : {message.text}
+                        {message.username} : {message.message}
                     </Typography>
                 </CardContent>
             </Card>
