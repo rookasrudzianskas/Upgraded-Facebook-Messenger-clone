@@ -6,7 +6,8 @@ const Message = ({message, username}) => {
     const isUser = username === message.username;
 
     return (
-            <Card className={`message ${isUser && 'message__user'}`}>
+        <div className={`message ${isUser && "message__user"}`}>
+            <Card className={isUser ? "message_userCard" : 'message_guestCard' }>
                 <CardContent>
                     <Typography
                         color="white"
@@ -17,6 +18,7 @@ const Message = ({message, username}) => {
                     </Typography>
                 </CardContent>
             </Card>
+        </div>
     )
 }
 
