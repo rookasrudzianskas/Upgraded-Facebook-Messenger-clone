@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import {Button} from "@material-ui/core";
 
 function App() {
     const [input, setInput] = useState('');
@@ -23,7 +24,7 @@ function App() {
 
         <form action="">
             <input type="text" value={input} onChange={event => setInput(event.target.value)}/>
-            <button type={"submit"} onClick={sendMessage}>Send Message</button>
+            <Button disabled={!input} variant="contained" color="primary" type={"submit"} onClick={sendMessage}>Send Message</Button>
         </form>
         {
             messages.map(message => (
