@@ -7,9 +7,7 @@ import firebase from 'firebase';
 
 function App() {
     const [input, setInput] = useState('');
-    const [messages, setMessages] = useState([
-
-    ]);
+    const [messages, setMessages] = useState([]);
     const [username, setUsername] = useState('');
 
     useEffect(() => {
