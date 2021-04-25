@@ -17,7 +17,7 @@ function App() {
         // if it is blank inside [], then the app loads
 
         // const name = prompt("Please enter your name");
-        // setUsername(prompt("Please enter your name"));
+        setUsername(prompt("Please enter your name"));
         // console.log(username);
 
 
@@ -46,7 +46,7 @@ function App() {
         </form>
         {
             messages.map(message => (
-                <Message username={message.username} text={message.text}/>
+                <Message username={username} message={message}/>
             ))
         }
     </div>
